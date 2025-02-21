@@ -20,28 +20,55 @@
 			.move-icon {
 				height: 50px;
 			}
+
+			.move-btn {
+				background-color: transparent;
+				border: 3px solid white;
+				border-radius: 50%;
+				width: 120px;
+				height: 120px;
+				margin-left: 10px;
+			}
+
+			.result {
+				font-size: 25px;
+				font-weight: bold;
+				margin-top: 50px;
+			}
+
+			.score {
+				margin-top: 60px;
+			}
+
+			.reset-score-button {
+				border: none;
+				background-color: white;
+				font-size: 15px;
+				padding: 8px 15px;
+				cursor: pointer;
+			}
 		</style>
 	</head>
 
 	<body>
 		<p class="title">Rock Paper Scissors</p>
-		<button onclick="playGame('rock');">
+		<button onclick="playGame('rock');" class="move-btn">
 			<img src="/images/rock-emoji.png" alt="Rock Image" class="move-icon" />
 		</button>
 
-		<button onclick="playGame('paper');">
+		<button onclick="playGame('paper');" class="move-btn">
 			<img src="/images/paper-emoji.png" alt="Paper emoji" class="move-icon" />
 		</button>
 
-		<button onclick="playGame('scissors'); ">
+		<button onclick="playGame('scissors'); " class="move-btn">
 			<img src="/images/scissors-emoji.png" alt="Scissors" class="move-icon" />
 		</button>
 
-		<p class="js-result"></p>
+		<p class="js-result result"></p>
 
 		<p class="js-moves"></p>
 
-		<p class="js-score"></p>
+		<p class="js-score score"></p>
 
 		<button
 			onclick="
@@ -50,9 +77,10 @@
 		score.ties = 0;
 		localStorage.removeItem('score');
 		updateScoreElement();
-
+		
 		alert('Score was reseted')
 		"
+			class="reset-score-button"
 		>
 			Reset Score
 		</button>
@@ -125,9 +153,10 @@
 
 				document.querySelector(".js-result").innerHTML = result;
 
-				document.querySelector(
-					".js-moves"
-				).innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+				document.querySelector(".js-moves").innerHTML = `You
+			<img src="/images/${playerMove}-emoji.png" alt="Rock emoji" class="move-icon" />
+			<img src="/images/${computerMove}-emoji.png" alt="Paper Emoji" class="move-icon" />
+			Computer`;
 			}
 
 			function pickcomputerMove() {

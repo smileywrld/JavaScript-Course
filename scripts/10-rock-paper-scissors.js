@@ -68,7 +68,7 @@ function playGame(playerMove) {
 
 	document.querySelector(".js-moves").innerHTML = `You
 			<img src="/images/${playerMove}-emoji.png" alt="Rock emoji" class="move-icon" />
-			<img src="/images/${computerMove}-emoji.png" alt="Paper Emoji" class="move-icon" />
+			<img src="/images/${computerMove}-emoji.png" alt="Rock emoji" class="move-icon" />
 			Computer`;
 }
 
@@ -76,11 +76,11 @@ function pickcomputerMove() {
 	const randomNumber = Math.random();
 	let computerMove = "";
 	if (randomNumber >= 0 && randomNumber < 1 / 3) {
-		computerMove = "Rock";
+		computerMove = "rock";
 	} else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-		computerMove = "Paper";
+		computerMove = "aper";
 	} else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-		computerMove = "Scissors";
+		computerMove = "scissors";
 	}
 
 	return computerMove;

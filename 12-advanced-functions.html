@@ -6,7 +6,20 @@
 		<title>Advanced Functions</title>
 	</head>
 	<body>
+        <button onclick="" class="js-button">Click</button>
 		<script>
+            const buttonElement = document.querySelector('.js-button');
+
+             const EventListener =  ()=>{
+                console.log('clicked again');
+            }
+
+            buttonElement.addEventListener('click', EventListener);
+
+
+            buttonElement.addEventListener('click', EventListener);
+
+            buttonElement.removeEventListener('click');
           /*  function greeting(){
                 console.log('hello');
             }
@@ -60,6 +73,8 @@
             console.log('NEXT LINE 2');
             */
 
+            /*
+
             [
                 'make dinner', 'wash dishes', 'watch youtube'
             ].forEach((value, index)=>{
@@ -90,6 +105,16 @@
 
             const oneLine = ()=> 2+3;
             console.log(oneLine());
+
+            const object2 = {
+                method: () =>{
+                    
+                },
+                method()  {
+
+                }
+            }
+                */
         </script>
 	</bod>
 </html>

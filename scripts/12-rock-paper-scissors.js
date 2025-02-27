@@ -51,7 +51,23 @@ document.querySelector(".js-scissors-button").addEventListener("click", () => {
 	playGame("scissors");
 });
 
+document
+	.querySelector(".js-reset-score-button")
+	.addEventListener("click", () => {
+		score.wins = 0;
+		score.losses = 0;
+		score.ties = 0;
+		localStorage.removeItem("score");
+		updateScoreElement();
+		alert("Score was reseted");
+	});
+
+document.querySelector(".js-auto-play-button").addEventListener("click", () => {
+	autoPlay();
+});
+
 // Used event listener instead of onclick attribute
+
 function playGame(playerMove) {
 	playerMove = playerMove.toLowerCase();
 	const computerMove = pickcomputerMove();

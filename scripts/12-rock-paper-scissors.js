@@ -68,6 +68,16 @@ document.querySelector(".js-auto-play-button").addEventListener("click", () => {
 
 // Used event listener instead of onclick attribute
 
+document.body.addEventListener("keydown", (event) => {
+	if (event.key === "r") {
+		playGame("rock");
+	} else if (event.key === "p") {
+		playGame("paper");
+	} else if (event.key === "s") {
+		playGame("scissors");
+	}
+});
+
 function playGame(playerMove) {
 	playerMove = playerMove.toLowerCase();
 	const computerMove = pickcomputerMove();
